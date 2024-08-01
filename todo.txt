@@ -1,0 +1,6 @@
+- First work on python
+- different sorting algos
+
+- then visualize using tkinter
+
+- then make a website
