@@ -137,3 +137,27 @@ button {
 button:hover {
     background-color: #45a049;
 }
+
+.infopage {
+    max-width: 100vw;
+    height: 100vh;
+}
+
+.info-heading {
+    text-align: center;
+    font-size: 30px;
+}
+
+.info-description, .info-time {
+    display: flex;
+    justify-content: space-between;
+    height: 40vh;
+}
+
+.info-description > div, .info-time > div {
+    width: 48vw;
+}
+
+.description-right{
+    text-align: end;
+}

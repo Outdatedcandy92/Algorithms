@@ -33,7 +33,7 @@
                 <option value="Stooge Sort">Stooge Sort</option>
                 <option value="Tree Sort">Tree Sort</option>
                 <option value="Odd-Even Sort">Odd-Even Sort</option>
-                <option value="3way Merge Sort">3-way Merge Sort</option>
+                <!-- <option value="3way Merge Sort">3-way Merge Sort</option> -->
             </select>
             <button onclick="startSorting()">Start Sorting</button>
             <button onclick="resetArray()">Reset Array</button>
@@ -54,12 +54,35 @@
 
     </section>
 
-    <div id="info">
-        <h2 id="SortingAlgo">h</h2>
-        <p id="AlgoDescription">e</p>
-        <div id="AlgoComplexity">y</div>
-    </div>
+    <!--for testing purposes-->
+    <section class="infopage">
+        <div class="info-heading">
+            <h1>Merge Sort</h1>
+        </div>
+        <div class="info-description">
+            <div class="description-left">
+                <h1>How It Works</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim  veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea.</p>
+            </div>
+            <div class="description-right">
+                <p>Example here</p>
+                
+            </div>
+        </div>
+        <div class="info-time">
+            <div class="time-left">
+              <h1>Time Complexity</h1>
 
+                <p><b>Best Case:</b> O(n log n)</p>
+                <p><b>Average Case:</b> O(n log n)</p>
+                <p><b>Worst Case:</b> O(n log n)</p>
+            </div>
+            <div class="time-right">   
+                <p>Graph here</p>
+   
+            </div>
+        </div>
+    </section>
 
     <script src="src/algo.js"></script>
     <script src="src/script.js"></script>

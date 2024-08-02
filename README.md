@@ -127,3 +127,193 @@ Radix Sort is a non-comparative sorting algorithm. It avoids comparison by creat
 - Worst Case: O(nk)
 
 Where \(n\) is the number of elements and \(k\) is the number of digits in the largest number.
+
+### Bingo Sort Algorithm
+
+**How it works**:
+1. Find the largest element and move it to the end.
+2. Repeat the process for the remaining elements.
+
+**Time Complexity**:
+- Best Case: O(n)
+- Average Case: O(n^2)
+- Worst Case: O(n^2)
+
+### ShellSort
+
+**How it works**:
+1. Divide the list into smaller sublists using a gap sequence.
+2. Sort each sublist using insertion sort.
+3. Reduce the gap and repeat until the gap is 1.
+
+**Time Complexity**:
+- Best Case: O(n log n)
+- Average Case: O(n log^2 n)
+- Worst Case: O(n log^2 n)
+
+### TimSort
+
+**How it works**:
+1. Divide the list into small runs and sort each run using insertion sort.
+2. Merge the runs using merge sort.
+
+**Time Complexity**:
+- Best Case: O(n)
+- Average Case: O(n log n)
+- Worst Case: O(n log n)
+
+### Comb Sort
+
+**How it works**:
+1. Initialize the gap to the length of the list.
+2. Compare and swap elements that are gap distance apart.
+3. Reduce the gap and repeat until the gap is 1.
+
+**Time Complexity**:
+- Best Case: O(n log n)
+- Average Case: O(n^2 / 2^p)
+- Worst Case: O(n^2)
+
+### Pigeonhole Sort
+
+**How it works**:
+1. Find the range of the elements.
+2. Create pigeonholes for each element in the range.
+3. Place each element in its corresponding pigeonhole.
+4. Collect the elements from the pigeonholes.
+
+**Time Complexity**:
+- Best Case: O(n + k)
+- Average Case: O(n + k)
+- Worst Case: O(n + k)
+
+Where \(n\) is the number of elements and \(k\) is the range of the elements.
+
+### Cycle Sort
+
+**How it works**:
+1. For each element, find its correct position.
+2. Swap the element with the element at its correct position.
+3. Repeat the process for all elements.
+
+**Time Complexity**:
+- Best Case: O(n^2)
+- Average Case: O(n^2)
+- Worst Case: O(n^2)
+
+### Cocktail Sort
+
+**How it works**:
+1. Perform a bubble sort in both directions.
+2. Repeat the process until the list is sorted.
+
+**Time Complexity**:
+- Best Case: O(n)
+- Average Case: O(n^2)
+- Worst Case: O(n^2)
+
+### Strand Sort
+
+**How it works**:
+1. Create a sublist of sorted elements.
+2. Merge the sublist with the remaining elements.
+3. Repeat the process until all elements are sorted.
+
+**Time Complexity**:
+- Best Case: O(n)
+- Average Case: O(n^2)
+- Worst Case: O(n^2)
+
+### Bitonic Sort
+
+**How it works**:
+1. Divide the list into bitonic sequences.
+2. Sort each bitonic sequence.
+3. Merge the sorted sequences.
+
+**Time Complexity**:
+- Best Case: O(n log^2 n)
+- Average Case: O(n log^2 n)
+- Worst Case: O(n log^2 n)
+
+### Pancake Sorting
+
+**How it works**:
+1. Find the largest element and flip it to the front.
+2. Flip the largest element to its correct position.
+3. Repeat the process for the remaining elements.
+
+**Time Complexity**:
+- Best Case: O(n)
+- Average Case: O(n^2)
+- Worst Case: O(n^2)
+
+### BogoSort
+
+**How it works**:
+1. Randomly shuffle the list.
+2. Check if the list is sorted.
+3. Repeat the process until the list is sorted.
+
+**Time Complexity**:
+- Best Case: O(n)
+- Average Case: O((n+1)!)
+- Worst Case: O(∞)
+
+### Gnome Sort
+
+**How it works**:
+1. Compare the current element with the previous element.
+2. If they are in the wrong order, swap them and move one step back.
+3. Repeat the process until the list is sorted.
+
+**Time Complexity**:
+- Best Case: O(n)
+- Average Case: O(n^2)
+- Worst Case: O(n^2)
+
+### Sleep Sort
+
+**How it works**:
+1. Create a thread for each element.
+2. Sleep for a duration proportional to the element's value.
+3. Print the element after waking up.
+
+**Time Complexity**:
+- Best Case: O(n)
+- Average Case: O(n)
+- Worst Case: O(n)
+
+### Stooge Sort
+
+**How it works**:
+1. If the first element is larger than the last element, swap them.
+2. Recursively sort the first two-thirds and the last two-thirds of the list.
+3. Recursively sort the first two-thirds again.
+
+**Time Complexity**:
+- Best Case: O(n^2.709)
+- Average Case: O(n^2.709)
+- Worst Case: O(n^2.709)
+
+### Tree Sort
+
+**How it works**:
+1. Insert all elements into a binary search tree.
+2. Perform an in-order traversal to retrieve the sorted elements.
+
+**Time Complexity**:
+- Best Case: O(n log n)
+- Average Case: O(n log n)
+- Worst Case: O(n^2)
+
+### Odd-Even Sort / Brick Sort
+
+**How it works**:
+1. Compare and swap adjacent elements in odd and even indexed pairs.
+2. Repeat the process until the list is sorted.
+
+**Time Complexity**:
+- Best Case: O(n)
+- Average Case: O(n^2)
+- Worst Case: O(n^2)

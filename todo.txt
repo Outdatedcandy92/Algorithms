@@ -29,13 +29,13 @@ WEBSITE
     - [x] Pigeonhole Sort
     - [x] Cycle Sort
     - [x] Cocktail Sort
-    - [ ] Strand Sort
-    - [ ] Bitonic Sort
-    - [ ] Pancake sorting
-    - [ ] BogoSort
-    - [ ] Gnome Sort
-    - [ ] Sleep Sort 
-    - [ ] Stooge Sort
-    - [ ] Tree Sort
-    - [ ] Odd-Even Sort / Brick Sort
-    - [ ] 3-way Merge Sort
+    - [x] Strand Sort
+    - [x] Bitonic Sort
+    - [x] Pancake sorting
+    - [x] BogoSort
+    - [x] Gnome Sort
+    - [x] Sleep Sort 
+    - [x] Stooge Sort
+    - [x] Tree Sort
+    - [x] Odd-Even Sort / Brick Sort
+    - [x] 3-way Merge Sort (PROBLEMS)

@@ -142,47 +142,43 @@ function generateArray(length) {
 }
 
 
-let algorithmsData = {};
+// let algorithmsData = {};
 
+// document.addEventListener('DOMContentLoaded', async () => {
+//     try {
+//         const response = await fetch('src/algo.json');
+//         algorithmsData = await response.json();
+//         logSelectedAlgorithm();
+//     } catch (error) {
+//         console.error('Error fetching algorithms data:', error);
+//     }
+// });
 
-document.addEventListener('DOMContentLoaded', async () => {
-    try {
-        const response = await fetch('src/algo.json');
-        algorithmsData = await response.json();
-        logSelectedAlgorithm();
-    } catch (error) {
-        console.error('Error fetching algorithms data:', error);
-    }
-});
+// function logSelectedAlgorithm() {
+//     const algorithmSelect = document.getElementById('algorithm');
+//     const selectedAlgorithm = algorithmSelect.value;
+//     console.log('Selected Algorithm:', selectedAlgorithm);
 
-function logSelectedAlgorithm() {
-    const algorithmSelect = document.getElementById('algorithm');
-    const selectedAlgorithm = algorithmSelect.value;
-    console.log('Selected Algorithm:', selectedAlgorithm);
+//     const AlgoHeading = document.getElementById('SortingAlgo');
+//     const AlgoDescription = document.getElementById('AlgoDescription');
+//     const AlgoComplexity = document.getElementById('AlgoComplexity');
 
-    const AlgoHeading = document.getElementById('SortingAlgo');
-    const AlgoDescription = document.getElementById('AlgoDescription');
-    const AlgoComplexity = document.getElementById('AlgoComplexity');
+//     const algorithmData = algorithmsData.algorithms.find(algo => algo.name === selectedAlgorithm);
 
+//     if (algorithmData) {
+//         AlgoHeading.innerHTML = `${selectedAlgorithm}`;
+//         AlgoDescription.innerHTML = algorithmData.description;
+//         AlgoComplexity.innerHTML = `
+//             <p>Best Case: ${algorithmData.time_complexity.best_case}</p>
+//             <p>Average Case: ${algorithmData.time_complexity.average_case}</p>
+//             <p>Worst Case: ${algorithmData.time_complexity.worst_case}</p>
+//         `;
+//     } else {
+//         AlgoDescription.innerHTML = 'Description not available.';
+//         AlgoComplexity.innerHTML = 'Complexity not available.';
+//     }
+// }
 
-
-
-    const algorithmData = algorithmsData.algorithms.find(algo => algo.name === selectedAlgorithm);
-
-    if (algorithmData) {
-        AlgoHeading.innerHTML = `${selectedAlgorithm}`;
-        AlgoDescription.innerHTML = algorithmData.description;
-        AlgoComplexity.innerHTML = `
-            <p>Best Case: ${algorithmData.time_complexity.best_case}</p>
-            <p>Average Case: ${algorithmData.time_complexity.average_case}</p>
-            <p>Worst Case: ${algorithmData.time_complexity.worst_case}</p>
-        `;
-    } else {
-        AlgoDescription.innerHTML = 'Description not available.';
-        AlgoComplexity.innerHTML = 'Complexity not available.';
-    }
-}
-
-document.getElementById('algorithm').addEventListener('change', logSelectedAlgorithm);
+// document.getElementById('algorithm').addEventListener('change', logSelectedAlgorithm);
 
 generateArray(arraySize);
