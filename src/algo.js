@@ -411,3 +411,256 @@ async function cocktailSort() {
         start++;
     }
 }
+
+async function strandSort() {
+    function merge(arr1, arr2) {
+        let result = [];
+        while (arr1.length && arr2.length) {
+            if (arr1[0] < arr2[0]) {
+                result.push(arr1.shift());
+            } else {
+                result.push(arr2.shift());
+            }
+        }
+        return result.concat(arr1).concat(arr2);
+    }
+
+    async function strand(arr) {
+        if (arr.length === 0) return [];
+        let sublist = [arr.shift()];
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] > sublist[sublist.length - 1]) {
+                sublist.push(arr.splice(i, 1)[0]);
+                i--;
+            }
+        }
+        drawArray(array);
+        await sleep();
+        return merge(sublist, await strand(arr));
+    }
+
+    array = await strand(array);
+    drawArray(array);
+    await sleep();
+}
+
+async function bitonicSort() {
+    async function bitonicMerge(arr, low, cnt, dir) {
+        if (cnt > 1) {
+            let k = Math.floor(cnt / 2);
+            for (let i = low; i < low + k; i++) {
+                if (dir === (arr[i] > arr[i + k])) {
+                    [arr[i], arr[i + k]] = [arr[i + k], arr[i]];
+                    drawArray(array);
+                    await sleep();
+                }
+            }
+            await bitonicMerge(arr, low, k, dir);
+            await bitonicMerge(arr, low + k, k, dir);
+        }
+    }
+
+    async function bitonicSortHelper(arr, low, cnt, dir) {
+        if (cnt > 1) {
+            let k = Math.floor(cnt / 2);
+            await bitonicSortHelper(arr, low, k, 1);
+            await bitonicSortHelper(arr, low + k, k, 0);
+            await bitonicMerge(arr, low, cnt, dir);
+        }
+    }
+
+    await bitonicSortHelper(array, 0, array.length, 1);
+    drawArray(array);
+    await sleep();
+}
+
+async function pancakeSort() {
+    function flip(arr, i) {
+        let start = 0;
+        while (start < i) {
+            [arr[start], arr[i]] = [arr[i], arr[start]];
+            start++;
+            i--;
+        }
+    }
+
+    for (let curr_size = array.length; curr_size > 1; --curr_size) {
+        let mi = 0;
+        for (let i = 0; i < curr_size; i++) {
+            if (array[i] > array[mi]) {
+                mi = i;
+            }
+        }
+        if (mi !== curr_size - 1) {
+            flip(array, mi);
+            drawArray(array);
+            await sleep();
+            flip(array, curr_size - 1);
+            drawArray(array);
+            await sleep();
+        }
+    }
+}
+
+async function bogoSort() {
+    function isSorted(arr) {
+        for (let i = 1; i < arr.length; i++) {
+            if (arr[i] < arr[i - 1]) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    function shuffle(arr) {
+        for (let i = arr.length - 1; i > 0; i--) {
+            let j = Math.floor(Math.random() * (i + 1));
+            [arr[i], arr[j]] = [arr[j], arr[i]];
+        }
+    }
+
+    while (!isSorted(array)) {
+        shuffle(array);
+        drawArray(array);
+        await sleep();
+    }
+}
+
+async function gnomeSort() {
+    let index = 0;
+    while (index < array.length) {
+        if (index === 0 || array[index] >= array[index - 1]) {
+            index++;
+        } else {
+            [array[index], array[index - 1]] = [array[index - 1], array[index]];
+            index--;
+            drawArray(array);
+            await sleep();
+        }
+    }
+    drawArray(array);
+    await sleep();
+}
+
+async function sleepSort() {
+    let sortedArray = [];
+    let promises = array.map(num => new Promise(resolve => setTimeout(() => {
+        sortedArray.push(num);
+        drawArray(sortedArray);
+        resolve();
+    }, num)));
+
+    await Promise.all(promises);
+    array = sortedArray;
+    drawArray(array);
+    await sleep();
+}
+
+async function stoogeSort(l = 0, h = array.length - 1) {
+    if (array[h] < array[l]) {
+        [array[l], array[h]] = [array[h], array[l]];
+        drawArray(array);
+        await sleep();
+    }
+    if (h - l + 1 > 2) {
+        let t = Math.floor((h - l + 1) / 3);
+        await stoogeSort(l, h - t);
+        await stoogeSort(l + t, h);
+        await stoogeSort(l, h - t);
+    }
+}
+
+class TreeNode {
+    constructor(value) {
+        this.value = value;
+        this.left = null;
+        this.right = null;
+    }
+}
+
+async function treeSort() {
+    function insert(root, value) {
+        if (!root) return new TreeNode(value);
+        if (value < root.value) root.left = insert(root.left, value);
+        else root.right = insert(root.right, value);
+        return root;
+    }
+
+    function inOrderTraversal(root, result) {
+        if (root) {
+            inOrderTraversal(root.left, result);
+            result.push(root.value);
+            inOrderTraversal(root.right, result);
+        }
+    }
+
+    let root = null;
+    for (let value of array) {
+        root = insert(root, value);
+        drawArray(array);
+        await sleep();
+    }
+
+    let sortedArray = [];
+    inOrderTraversal(root, sortedArray);
+    array = sortedArray;
+    drawArray(array);
+    await sleep();
+}
+
+async function oddEvenSort() {
+    let sorted = false;
+    while (!sorted) {
+        sorted = true;
+        for (let i = 1; i < array.length - 1; i += 2) {
+            if (array[i] > array[i + 1]) {
+                [array[i], array[i + 1]] = [array[i + 1], array[i]];
+                sorted = false;
+                drawArray(array);
+                await sleep();
+            }
+        }
+        for (let i = 0; i < array.length - 1; i += 2) {
+            if (array[i] > array[i + 1]) {
+                [array[i], array[i + 1]] = [array[i + 1], array[i]];
+                sorted = false;
+                drawArray(array);
+                await sleep();
+            }
+        }
+    }
+    drawArray(array);
+    await sleep();
+}
+
+async function threeWayMergeSort() {
+    async function mergeSort(arr) {
+        if (arr.length < 2) return arr;
+        let third = Math.floor(arr.length / 3);
+        let left = arr.slice(0, third);
+        let middle = arr.slice(third, 2 * third);
+        let right = arr.slice(2 * third);
+
+        left = await mergeSort(left);
+        middle = await mergeSort(middle);
+        right = await mergeSort(right);
+
+        return merge(merge(left, middle), right);
+    }
+
+    function merge(left, right) {
+        let result = [];
+        while (left.length && right.length) {
+            if (left[0] < right[0]) {
+                result.push(left.shift());
+            } else {
+                result.push(right.shift());
+            }
+        }
+        return result.concat(left).concat(right);
+    }
+
+    array = await mergeSort(array);
+    drawArray(array);
+    await sleep();
+}

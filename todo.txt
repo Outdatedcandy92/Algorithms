@@ -32,12 +32,10 @@ WEBSITE
     - [ ] Strand Sort
     - [ ] Bitonic Sort
     - [ ] Pancake sorting
-    - [ ] BogoSort or Permutation Sort
+    - [ ] BogoSort
     - [ ] Gnome Sort
-    - [ ] Sleep Sort – The King of Laziness
-    - [ ] Structure Sorting in C++
+    - [ ] Sleep Sort 
     - [ ] Stooge Sort
-    - [ ] Tag Sort (To get both sorted and original)
     - [ ] Tree Sort
     - [ ] Odd-Even Sort / Brick Sort
     - [ ] 3-way Merge Sort

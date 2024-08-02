@@ -101,6 +101,36 @@ async function startSorting() {
         case 'Cocktail Sort':
             await cocktailSort();
             break;
+        case 'Strand Sort':
+            await strandSort();
+            break;
+        case 'Bitonic Sort':
+            await bitonicSort();
+            break;
+        case 'Pancake Sort':
+            await pancakeSort();
+            break;
+        case 'BogoSort':
+            await bogoSort();
+            break;
+        case 'Gnome Sort':
+            await gnomeSort();
+            break;
+        case 'Sleep Sort':
+            await sleepSort();
+            break;
+        case 'Stooge Sort':
+            await stoogeSort();
+            break;
+        case 'Tree Sort':
+            await treeSort();
+            break;
+        case 'Odd-Even Sort':
+            await oddEvenSort();
+            break;
+        //case '3way Merge Sort':
+            //await threeWayMergeSort();
+            //break;
         default:
             console.error('Unknown sorting algorithm:', algorithm);
     }
