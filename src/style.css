@@ -4,7 +4,6 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
     margin: 0;
     background-color: #0d1117;
     color: white;
@@ -12,6 +11,10 @@ body {
 
 .controls {
     margin-bottom: 20px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
 }
 
 .controls select,
@@ -30,6 +33,104 @@ body {
 
 .bar {
     width: 20px;
-    margin: 0 2px;
+    margin: 0 1px;
     background-color: #39d353;
+}
+
+
+.first{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#info {
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+    width: 60vw;
+}
+
+#info h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    text-align: center; 
+}
+
+#info p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+#info div {
+    font-size: 14px;
+}
+
+
+
+#algorithm {
+    font-size: 14px;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    margin-right: 10px;
+    margin-bottom: 20px;
+}
+
+
+input[type="range"] {
+
+    width: 90%;
+    height: 8px;
+    background: #ddd;
+    outline: none;
+    opacity: 0.7;
+    transition: opacity .2s;
+    margin-top: 10px;
+}
+
+input[type="range"]:hover {
+    opacity: 1;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #4CAF50;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+input[type="range"]::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: #4CAF50;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+
+#speedValue, #arrayLengthValue{
+    font-size: 16px;
+    margin-left: 10px;
+}
+
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #45a049;
 }

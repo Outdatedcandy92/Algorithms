@@ -20,6 +20,7 @@ document.getElementById('speedSlider').addEventListener('input', function() {
 
 document.getElementById('arrayLength').addEventListener('input', function() {
     arraySize = this.value;
+    document.getElementById('arrayLengthValue').textContent = arraySize;
     generateArray(arraySize); 
 });
 
@@ -30,11 +31,13 @@ function resetArray() {
 
 function drawArray(highlightedIndices = []) {
     const container = document.getElementById('array-container');
+    const widthEach = 1000 / arraySize;
     container.innerHTML = '';
     array.forEach((value, index) => {
         const bar = document.createElement('div');
         bar.classList.add('bar');
         bar.style.height = `${value * 4}px`;
+        bar.style.width = `${widthEach - 2}px`;
         if (highlightedIndices.includes(index)) {
             bar.style.backgroundColor = 'red'; //TODO: pick a better color or a variable
         }
@@ -88,6 +91,19 @@ function generateArray(length) {
 }
 
 
+let algorithmsData = {};
+
+
+document.addEventListener('DOMContentLoaded', async () => {
+    try {
+        const response = await fetch('src/algo.json'); 
+        algorithmsData = await response.json();
+        logSelectedAlgorithm(); 
+    } catch (error) {
+        console.error('Error fetching algorithms data:', error);
+    }
+});
+
 function logSelectedAlgorithm() {
     const algorithmSelect = document.getElementById('algorithm');
     const selectedAlgorithm = algorithmSelect.value;
@@ -97,14 +113,25 @@ function logSelectedAlgorithm() {
     const AlgoDescription = document.getElementById('AlgoDescription');
     const AlgoComplexity = document.getElementById('AlgoComplexity');
 
-    AlgoHeading.innerHTML = `${selectedAlgorithm}`;
-    //TODO: get the data from algo.json
+
+
+
+    const algorithmData = algorithmsData.algorithms.find(algo => algo.name === selectedAlgorithm);
+
+    if (algorithmData) {
+        AlgoHeading.innerHTML = `${selectedAlgorithm}`;
+        AlgoDescription.innerHTML = algorithmData.description;
+        AlgoComplexity.innerHTML = `
+            <p>Best Case: ${algorithmData.time_complexity.best_case}</p>
+            <p>Average Case: ${algorithmData.time_complexity.average_case}</p>
+            <p>Worst Case: ${algorithmData.time_complexity.worst_case}</p>
+        `;
+    } else {
+        AlgoDescription.innerHTML = 'Description not available.';
+        AlgoComplexity.innerHTML = 'Complexity not available.';
+    }
 }
 
-
 document.getElementById('algorithm').addEventListener('change', logSelectedAlgorithm);
-
-
-document.addEventListener('DOMContentLoaded', logSelectedAlgorithm);
 
 generateArray(arraySize);

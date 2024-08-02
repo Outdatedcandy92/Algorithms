@@ -1,42 +1,52 @@
-<title>Sorting Algorithm Visualization</title>
-<link rel="stylesheet" type="text/css" href="src/style.css" />
+<html>
+
+<head>
+    <title>Sorting Algorithm Visualization</title>
+    <link rel="stylesheet" type="text/css" href="src/style.css" />
 </head>
+
 <body>
-    <div class="controls">
-        <select id="algorithm">
-            <option value="Bubble Sort">Bubble Sort</option>
-            <option value="Selection Sort">Selection Sort</option>
-            <option value="Insertion Sort">Insertion Sort</option>
-            <option value="Merge Sort">Merge Sort</option>
-            <option value="Quick Sort">Quick Sort</option>
-            <option value="Heap Sort">Heap Sort</option>
-            <option value="Counting Sort">Counting Sort</option>
-            <option value="Radix Sort">Radix Sort</option>
-        </select>
-        <button onclick="startSorting()">Start Sorting</button>
-        <button onclick="resetArray()">Reset Array</button>
-        
-        <div>
-            <label for="speedSlider">Speed (ms):</label>
-            <input type="range" id="speedSlider" min="0" max="1000" step="10" value="500">
-            <span id="speedValue">500</span> ms
+    <section class="first">
+        <div class="controls">
+            <select id="algorithm">
+                <option value="Bubble Sort">Bubble Sort</option>
+                <option value="Selection Sort">Selection Sort</option>
+                <option value="Insertion Sort">Insertion Sort</option>
+                <option value="Merge Sort">Merge Sort</option>
+                <option value="Quick Sort">Quick Sort</option>
+                <option value="Heap Sort">Heap Sort</option>
+                <option value="Counting Sort">Counting Sort</option>
+                <option value="Radix Sort">Radix Sort</option>
+            </select>
+            <button onclick="startSorting()">Start Sorting</button>
+            <button onclick="resetArray()">Reset Array</button>
+
+            <div>
+                <label for="speedSlider">Speed (ms):</label>
+                <input type="range" id="speedSlider" min="0" max="1000" step="10" value="500">
+                <span id="speedValue">500</span> ms
+            </div>
+
+            <div>
+                <label for="arrayLength">Array Length:</label>
+                <input type="range" id="arrayLength" min="10" max="100" step="1" value="50">
+                <span id="arrayLengthValue">50</span>
+            </div>
         </div>
-        
-        <div>
-            <label for="arrayLength">Array Length:</label>
-            <input type="range" id="arrayLength" min="10" max="100" step="1" value="50">
-        </div>
-    </div>
-    <div id="array-container"></div>
+        <div id="array-container"></div>
+
+    </section>
 
     <div id="info">
         <h2 id="SortingAlgo">h</h2>
         <p id="AlgoDescription">e</p>
-        <p id="AlgoComplexity">y</p>
+        <div id="AlgoComplexity">y</div>
     </div>
 
 
     <script src="src/algo.js"></script>
     <script src="src/script.js"></script>
+
 </body>
+
 </html>
