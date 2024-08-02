@@ -113,6 +113,210 @@
           "average_case": "O(nk)",
           "worst_case": "O(nk)"
         }
+      },
+      {
+        "name": "Bingo Sort Algorithm",
+        "how_it_works": [
+          "Find the largest element and move it to the end.",
+          "Repeat the process for the remaining elements."
+        ],
+        "time_complexity": {
+          "best_case": "O(n)",
+          "average_case": "O(n^2)",
+          "worst_case": "O(n^2)"
+        }
+      },
+      {
+        "name": "ShellSort",
+        "how_it_works": [
+          "Divide the list into smaller sublists using a gap sequence.",
+          "Sort each sublist using insertion sort.",
+          "Reduce the gap and repeat until the gap is 1."
+        ],
+        "time_complexity": {
+          "best_case": "O(n log n)",
+          "average_case": "O(n log^2 n)",
+          "worst_case": "O(n log^2 n)"
+        }
+      },
+      {
+        "name": "TimSort",
+        "how_it_works": [
+          "Divide the list into small runs and sort each run using insertion sort.",
+          "Merge the runs using merge sort."
+        ],
+        "time_complexity": {
+          "best_case": "O(n)",
+          "average_case": "O(n log n)",
+          "worst_case": "O(n log n)"
+        }
+      },
+      {
+        "name": "Comb Sort",
+        "how_it_works": [
+          "Initialize the gap to the length of the list.",
+          "Compare and swap elements that are gap distance apart.",
+          "Reduce the gap and repeat until the gap is 1."
+        ],
+        "time_complexity": {
+          "best_case": "O(n log n)",
+          "average_case": "O(n^2 / 2^p)",
+          "worst_case": "O(n^2)"
+        }
+      },
+      {
+        "name": "Pigeonhole Sort",
+        "how_it_works": [
+          "Find the range of the elements.",
+          "Create pigeonholes for each element in the range.",
+          "Place each element in its corresponding pigeonhole.",
+          "Collect the elements from the pigeonholes."
+        ],
+        "time_complexity": {
+          "best_case": "O(n + k)",
+          "average_case": "O(n + k)",
+          "worst_case": "O(n + k)"
+        }
+      },
+      {
+        "name": "Cycle Sort",
+        "how_it_works": [
+          "For each element, find its correct position.",
+          "Swap the element with the element at its correct position.",
+          "Repeat the process for all elements."
+        ],
+        "time_complexity": {
+          "best_case": "O(n^2)",
+          "average_case": "O(n^2)",
+          "worst_case": "O(n^2)"
+        }
+      },
+      {
+        "name": "Cocktail Sort",
+        "how_it_works": [
+          "Perform a bubble sort in both directions.",
+          "Repeat the process until the list is sorted."
+        ],
+        "time_complexity": {
+          "best_case": "O(n)",
+          "average_case": "O(n^2)",
+          "worst_case": "O(n^2)"
+        }
+      },
+      {
+        "name": "Strand Sort",
+        "how_it_works": [
+          "Create a sublist of sorted elements.",
+          "Merge the sublist with the remaining elements.",
+          "Repeat the process until all elements are sorted."
+        ],
+        "time_complexity": {
+          "best_case": "O(n)",
+          "average_case": "O(n^2)",
+          "worst_case": "O(n^2)"
+        }
+      },
+      {
+        "name": "Bitonic Sort",
+        "how_it_works": [
+          "Divide the list into bitonic sequences.",
+          "Sort each bitonic sequence.",
+          "Merge the sorted sequences."
+        ],
+        "time_complexity": {
+          "best_case": "O(n log^2 n)",
+          "average_case": "O(n log^2 n)",
+          "worst_case": "O(n log^2 n)"
+        }
+      },
+      {
+        "name": "Pancake Sorting",
+        "how_it_works": [
+          "Find the largest element and flip it to the front.",
+          "Flip the largest element to its correct position.",
+          "Repeat the process for the remaining elements."
+        ],
+        "time_complexity": {
+          "best_case": "O(n)",
+          "average_case": "O(n^2)",
+          "worst_case": "O(n^2)"
+        }
+      },
+      {
+        "name": "BogoSort",
+        "how_it_works": [
+          "Randomly shuffle the list.",
+          "Check if the list is sorted.",
+          "Repeat the process until the list is sorted."
+        ],
+        "time_complexity": {
+          "best_case": "O(n)",
+          "average_case": "O((n+1)!)",
+          "worst_case": "O(∞)"
+        }
+      },
+      {
+        "name": "Gnome Sort",
+        "how_it_works": [
+          "Compare the current element with the previous element.",
+          "If they are in the wrong order, swap them and move one step back.",
+          "Repeat the process until the list is sorted."
+        ],
+        "time_complexity": {
+          "best_case": "O(n)",
+          "average_case": "O(n^2)",
+          "worst_case": "O(n^2)"
+        }
+      },
+      {
+        "name": "Sleep Sort",
+        "how_it_works": [
+          "Create a thread for each element.",
+          "Sleep for a duration proportional to the element's value.",
+          "Print the element after waking up."
+        ],
+        "time_complexity": {
+          "best_case": "O(n)",
+          "average_case": "O(n)",
+          "worst_case": "O(n)"
+        }
+      },
+      {
+        "name": "Stooge Sort",
+        "how_it_works": [
+          "If the first element is larger than the last element, swap them.",
+          "Recursively sort the first two-thirds and the last two-thirds of the list.",
+          "Recursively sort the first two-thirds again."
+        ],
+        "time_complexity": {
+          "best_case": "O(n^2.709)",
+          "average_case": "O(n^2.709)",
+          "worst_case": "O(n^2.709)"
+        }
+      },
+      {
+        "name": "Tree Sort",
+        "how_it_works": [
+          "Insert all elements into a binary search tree.",
+          "Perform an in-order traversal to retrieve the sorted elements."
+        ],
+        "time_complexity": {
+          "best_case": "O(n log n)",
+          "average_case": "O(n log n)",
+          "worst_case": "O(n^2)"
+        }
+      },
+      {
+        "name": "Odd-Even Sort / Brick Sort",
+        "how_it_works": [
+          "Compare and swap adjacent elements in odd and even indexed pairs.",
+          "Repeat the process until the list is sorted."
+        ],
+        "time_complexity": {
+          "best_case": "O(n)",
+          "average_case": "O(n^2)",
+          "worst_case": "O(n^2)"
+        }
       }
     ]
   }

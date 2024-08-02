@@ -29,20 +29,23 @@ function resetArray() {
     drawArray();
 }
 
+
+
 function drawArray(highlightedIndices = []) {
-    const container = document.getElementById('array-container');
-    const widthEach = 1000 / arraySize;
-    container.innerHTML = '';
-    array.forEach((value, index) => {
-        const bar = document.createElement('div');
-        bar.classList.add('bar');
-        bar.style.height = `${value * 4}px`;
-        bar.style.width = `${widthEach - 2}px`;
-        if (highlightedIndices.includes(index)) {
-            bar.style.backgroundColor = 'red'; //TODO: pick a better color or a variable
-        }
-        container.appendChild(bar);
-    });
+        const container = document.getElementById('array-container');
+        const widthEach = 1000 / arraySize;
+        container.innerHTML = '';
+        array.forEach((value, index) => {
+            const bar = document.createElement('div');
+            bar.classList.add('bar');
+            bar.style.height = `${value * 4}px`;
+            bar.style.width = `${widthEach - 2}px`;
+            if (highlightedIndices.includes(index)) {
+                bar.style.backgroundColor = 'red'; //TODO: pick a better color or a variable
+            }
+            container.appendChild(bar);
+        });
+
 }
 
 async function sleep() {
@@ -129,8 +132,8 @@ async function startSorting() {
             await oddEvenSort();
             break;
         //case '3way Merge Sort':
-            //await threeWayMergeSort();
-            //break;
+        //await threeWayMergeSort();
+        //break;
         default:
             console.error('Unknown sorting algorithm:', algorithm);
     }
@@ -142,43 +145,62 @@ function generateArray(length) {
 }
 
 
-// let algorithmsData = {};
+let algorithmsData = {};
 
-// document.addEventListener('DOMContentLoaded', async () => {
-//     try {
-//         const response = await fetch('src/algo.json');
-//         algorithmsData = await response.json();
-//         logSelectedAlgorithm();
-//     } catch (error) {
-//         console.error('Error fetching algorithms data:', error);
-//     }
-// });
+document.addEventListener('DOMContentLoaded', async () => {
+    try {
+        const response = await fetch('src/algo.json');
+        algorithmsData = await response.json();
+        logSelectedAlgorithm();
+    } catch (error) {
+        console.error('Error fetching algorithms data:', error);
+    }
+});
 
-// function logSelectedAlgorithm() {
-//     const algorithmSelect = document.getElementById('algorithm');
-//     const selectedAlgorithm = algorithmSelect.value;
-//     console.log('Selected Algorithm:', selectedAlgorithm);
+function logSelectedAlgorithm() {
+    const algorithmSelect = document.getElementById('algorithm');
+    const selectedAlgorithm = algorithmSelect.value;
+    console.log('Selected Algorithm:', selectedAlgorithm);
 
-//     const AlgoHeading = document.getElementById('SortingAlgo');
-//     const AlgoDescription = document.getElementById('AlgoDescription');
-//     const AlgoComplexity = document.getElementById('AlgoComplexity');
+    const AlgoHeading = document.getElementById('HeadingInfo');
+    const AlgoDescription = document.getElementById('AlgoDescription');
+    const AlgoComplexity = document.getElementById('AlgoComplexity');
 
-//     const algorithmData = algorithmsData.algorithms.find(algo => algo.name === selectedAlgorithm);
+    const algorithmData = algorithmsData.algorithms.find(algo => algo.name === selectedAlgorithm);
 
-//     if (algorithmData) {
-//         AlgoHeading.innerHTML = `${selectedAlgorithm}`;
-//         AlgoDescription.innerHTML = algorithmData.description;
-//         AlgoComplexity.innerHTML = `
-//             <p>Best Case: ${algorithmData.time_complexity.best_case}</p>
-//             <p>Average Case: ${algorithmData.time_complexity.average_case}</p>
-//             <p>Worst Case: ${algorithmData.time_complexity.worst_case}</p>
-//         `;
-//     } else {
-//         AlgoDescription.innerHTML = 'Description not available.';
-//         AlgoComplexity.innerHTML = 'Complexity not available.';
-//     }
-// }
+    if (algorithmData) {
+        AlgoHeading.innerHTML = `${selectedAlgorithm}`;
+        AlgoDescription.innerHTML = algorithmData.description;
+        AlgoComplexity.innerHTML = `
+            <p>Best Case: ${algorithmData.time_complexity.best_case}</p>
+            <p>Average Case: ${algorithmData.time_complexity.average_case}</p>
+            <p>Worst Case: ${algorithmData.time_complexity.worst_case}</p>
+        `;
+    } else {
+        AlgoDescription.innerHTML = 'Description not available.';
+        AlgoComplexity.innerHTML = 'Complexity not available.';
+    }
+}
 
-// document.getElementById('algorithm').addEventListener('change', logSelectedAlgorithm);
+document.getElementById('algorithm').addEventListener('change', logSelectedAlgorithm);
 
 generateArray(arraySize);
+
+
+
+function test(){
+        console.log("Example 2");
+        const container = document.getElementById('ExampleCont');
+        container.innerHTML = '';
+        for (let i = 0; i < 5; i++) {
+            // FIX: USE MATH TO GET THE WIDTH AND HEIGHt
+            const box = document.createElement('div');
+            box.style.border = '1px solid white';
+            box.style.height = '100px';
+            box.style.backgroundColor = 'transparent';
+            box.style.flex = '1';
+            container.appendChild(box);
+        }
+        container.style.display = 'flex';
+}
+test();
