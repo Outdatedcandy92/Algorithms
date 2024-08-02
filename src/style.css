@@ -1,11 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     margin: 0;
-    background-color: #0d1117;
+    background-color: #131417;
     color: white;
 }
 
@@ -51,6 +53,7 @@ body {
     border-radius: 8px;
     margin-top: 20px;
     width: 60vw;
+    background-color: #2a2a2c;
 }
 
 #info h2 {

@@ -205,3 +205,209 @@ async function merge(left, mid, right) {
         array[k++] = rightArray[j++];
     }
 }
+
+
+
+async function bingoSort() {
+    let n = array.length;
+    let max = Math.max(...array);
+    let nextValue = max;
+    let bingo = max;
+
+    while (n > 0) {
+        bingo = nextValue;
+        nextValue = -Infinity;
+        for (let i = 0; i < n; i++) {
+            if (array[i] === bingo) {
+                array[i] = array[--n];
+                array[n] = bingo;
+                drawArray(array);
+                await sleep();
+            } else if (array[i] > nextValue) {
+                nextValue = array[i];
+            }
+        }
+    }
+}
+
+async function timSort() {
+    let n = array.length;
+    for (let i = 0; i < n; i += RUN)
+        await insertionSort(array, i, Math.min((i + 31), (n - 1)));
+
+    for (let size = RUN; size < n; size = 2 * size) {
+        for (let left = 0; left < n; left += 2 * size) {
+            let mid = left + size - 1;
+            let right = Math.min((left + 2 * size - 1), (n - 1));
+            if (mid < right)
+                await merge(left, mid, right);
+        }
+    }
+}
+
+async function shellSort() {
+    let n = array.length;
+    let gap = Math.floor(n / 2);
+
+    while (gap > 0) {
+        for (let i = gap; i < n; i++) {
+            let temp = array[i];
+            let j;
+            for (j = i; j >= gap && array[j - gap] > temp; j -= gap) {
+                array[j] = array[j - gap];
+                drawArray(array);
+                await sleep();
+            }
+            array[j] = temp;
+            drawArray(array);
+            await sleep();
+        }
+        gap = Math.floor(gap / 2);
+    }
+}
+
+const RUN = 32;
+
+async function insertionSort(array, left, right) {
+    for (let i = left + 1; i <= right; i++) {
+        let temp = array[i];
+        let j = i - 1;
+        while (j >= left && array[j] > temp) {
+            array[j + 1] = array[j];
+            j--;
+            drawArray(array);
+            await sleep();
+        }
+        array[j + 1] = temp;
+        drawArray(array);
+        await sleep();
+    }
+}
+
+async function combSort() {
+    let gap = array.length;
+    let shrink = 1.3;
+    let sorted = false;
+
+    while (!sorted) {
+        gap = Math.floor(gap / shrink);
+        if (gap <= 1) {
+            gap = 1;
+            sorted = true;
+        }
+
+        for (let i = 0; i + gap < array.length; i++) {
+            if (array[i] > array[i + gap]) {
+                [array[i], array[i + gap]] = [array[i + gap], array[i]];
+                sorted = false;
+                drawArray(array);
+                await sleep();
+            }
+        }
+    }
+}
+
+async function pigeonholeSort() {
+    let min = Math.min(...array);
+    let max = Math.max(...array);
+    let range = max - min + 1;
+    let holes = Array.from({ length: range }, () => []);
+
+    array.forEach((num) => {
+        holes[num - min].push(num);
+    });
+
+    let index = 0;
+    for (let hole of holes) {
+        while (hole.length > 0) {
+            array[index++] = hole.shift();
+            drawArray(array);
+            await sleep();
+        }
+    }
+}
+
+async function cycleSort() {
+    let writes = 0;
+
+    for (let cycleStart = 0; cycleStart < array.length - 1; cycleStart++) {
+        let item = array[cycleStart];
+        let pos = cycleStart;
+
+        for (let i = cycleStart + 1; i < array.length; i++) {
+            if (array[i] < item) {
+                pos++;
+            }
+        }
+
+        if (pos === cycleStart) {
+            continue;
+        }
+
+        while (item === array[pos]) {
+            pos++;
+        }
+
+        if (pos !== cycleStart) {
+            [array[pos], item] = [item, array[pos]];
+            writes++;
+            drawArray(array);
+            await sleep();
+        }
+
+        while (pos !== cycleStart) {
+            pos = cycleStart;
+            for (let i = cycleStart + 1; i < array.length; i++) {
+                if (array[i] < item) {
+                    pos++;
+                }
+            }
+
+            while (item === array[pos]) {
+                pos++;
+            }
+
+            if (item !== array[pos]) {
+                [array[pos], item] = [item, array[pos]];
+                writes++;
+                drawArray(array);
+                await sleep();
+            }
+        }
+    }
+}
+
+async function cocktailSort() {
+    let swapped = true;
+    let start = 0;
+    let end = array.length;
+
+    while (swapped) {
+        swapped = false;
+
+        for (let i = start; i < end - 1; ++i) {
+            if (array[i] > array[i + 1]) {
+                [array[i], array[i + 1]] = [array[i + 1], array[i]];
+                swapped = true;
+                drawArray(array);
+                await sleep();
+            }
+        }
+
+        if (!swapped) break;
+
+        swapped = false;
+        end--;
+
+        for (let i = end - 1; i >= start; i--) {
+            if (array[i] > array[i + 1]) {
+                [array[i], array[i + 1]] = [array[i + 1], array[i]];
+                swapped = true;
+                drawArray(array);
+                await sleep();
+            }
+        }
+
+        start++;
+    }
+}

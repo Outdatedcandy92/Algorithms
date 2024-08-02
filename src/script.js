@@ -1,6 +1,6 @@
 let array = [];
-let arraySize = 50; 
-let speed = 500; 
+let arraySize = 50;
+let speed = 500;
 let isSorting = false;
 
 
@@ -13,15 +13,15 @@ document.addEventListener('DOMContentLoaded', (event) => {
     generateArray(arraySize);
 });
 
-document.getElementById('speedSlider').addEventListener('input', function() {
+document.getElementById('speedSlider').addEventListener('input', function () {
     speed = this.value;
     document.getElementById('speedValue').textContent = speed;
 });
 
-document.getElementById('arrayLength').addEventListener('input', function() {
+document.getElementById('arrayLength').addEventListener('input', function () {
     arraySize = this.value;
     document.getElementById('arrayLengthValue').textContent = arraySize;
-    generateArray(arraySize); 
+    generateArray(arraySize);
 });
 
 function resetArray() {
@@ -80,6 +80,27 @@ async function startSorting() {
         case 'Radix Sort':
             await radixSort();
             break;
+        case 'Bingo Sort':
+            await bingoSort();
+            break;
+        case 'Shell Sort':
+            await shellSort();
+            break;
+        case 'Tim Sort':
+            await timSort();
+            break;
+        case 'Comb Sort':
+            await combSort();
+            break;
+        case 'Pigeonhole Sort':
+            await pigeonholeSort();
+            break;
+        case 'Cycle Sort':
+            await cycleSort();
+            break;
+        case 'Cocktail Sort':
+            await cocktailSort();
+            break;
         default:
             console.error('Unknown sorting algorithm:', algorithm);
     }
@@ -96,9 +117,9 @@ let algorithmsData = {};
 
 document.addEventListener('DOMContentLoaded', async () => {
     try {
-        const response = await fetch('src/algo.json'); 
+        const response = await fetch('src/algo.json');
         algorithmsData = await response.json();
-        logSelectedAlgorithm(); 
+        logSelectedAlgorithm();
     } catch (error) {
         console.error('Error fetching algorithms data:', error);
     }

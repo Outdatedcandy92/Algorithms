@@ -7,3 +7,37 @@ WEBSITE
 
 
 - style it better
+
+
+- more algos
+
+
+
+    - [x] Selection Sort
+    - [x] Bubble Sort
+    - [x] Insertion Sort
+    - [x] Merge Sort
+    - [x] Quick Sort
+    - [x] Heap Sort
+    - [x] Counting Sort
+    - [x] Radix Sort
+    - [ ] Bucket Sort  (LEAVING FOR LATER)
+    - [x] Bingo Sort Algorithm
+    - [x] ShellSort
+    - [x] TimSort
+    - [x] Comb Sort
+    - [x] Pigeonhole Sort
+    - [x] Cycle Sort
+    - [x] Cocktail Sort
+    - [ ] Strand Sort
+    - [ ] Bitonic Sort
+    - [ ] Pancake sorting
+    - [ ] BogoSort or Permutation Sort
+    - [ ] Gnome Sort
+    - [ ] Sleep Sort – The King of Laziness
+    - [ ] Structure Sorting in C++
+    - [ ] Stooge Sort
+    - [ ] Tag Sort (To get both sorted and original)
+    - [ ] Tree Sort
+    - [ ] Odd-Even Sort / Brick Sort
+    - [ ] 3-way Merge Sort
