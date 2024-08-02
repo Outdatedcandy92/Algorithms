@@ -1,0 +1,118 @@
+{
+    "algorithms": [
+      {
+        "name": "Bubble Sort",
+        "description": "Bubble Sort is a simple comparison-based sorting algorithm. It repeatedly steps through the list, compares adjacent elements, and swaps them if they are in the wrong order. The pass through the list is repeated until the list is sorted.",
+        "how_it_works": [
+          "Compare the first two elements.",
+          "If the first element is greater than the second, swap them.",
+          "Move to the next pair of elements and repeat the process until the end of the list.",
+          "Repeat the entire process for the entire list until no swaps are needed."
+        ],
+        "time_complexity": {
+          "best_case": "O(n)",
+          "average_case": "O(n^2)",
+          "worst_case": "O(n^2)"
+        }
+      },
+      {
+        "name": "Selection Sort",
+        "description": "Selection Sort is an in-place comparison-based sorting algorithm. It divides the input list into two parts: the sublist of items already sorted, which is built up from left to right at the front (left) of the list, and the sublist of items remaining to be sorted that occupy the rest of the list.",
+        "how_it_works": [
+          "Find the minimum element in the unsorted part of the list.",
+          "Swap it with the first unsorted element.",
+          "Move the boundary of the sorted and unsorted sublists one element to the right.",
+          "Repeat until the entire list is sorted."
+        ],
+        "time_complexity": {
+          "best_case": "O(n^2)",
+          "average_case": "O(n^2)",
+          "worst_case": "O(n^2)"
+        }
+      },
+      {
+        "name": "Insertion Sort",
+        "description": "Insertion Sort is a simple comparison-based sorting algorithm that builds the final sorted array one item at a time. It is much less efficient on large lists than more advanced algorithms such as quicksort, heapsort, or merge sort.",
+        "how_it_works": [
+          "Start with the second element (the first element is considered sorted).",
+          "Compare the current element with the sorted elements and insert it into the correct position.",
+          "Repeat for all elements until the list is sorted."
+        ],
+        "time_complexity": {
+          "best_case": "O(n)",
+          "average_case": "O(n^2)",
+          "worst_case": "O(n^2)"
+        }
+      },
+      {
+        "name": "Merge Sort",
+        "description": "Merge Sort is a divide-and-conquer algorithm that was invented by John von Neumann in 1945. It divides the input array into two halves, calls itself for the two halves, and then merges the two sorted halves.",
+        "how_it_works": [
+          "Divide the array into two halves.",
+          "Recursively sort each half.",
+          "Merge the two halves to produce the sorted array."
+        ],
+        "time_complexity": {
+          "best_case": "O(n log n)",
+          "average_case": "O(n log n)",
+          "worst_case": "O(n log n)"
+        }
+      },
+      {
+        "name": "Quick Sort",
+        "description": "Quick Sort is a highly efficient sorting algorithm and is based on partitioning of the array of data into smaller arrays. A large array is partitioned into two arrays, one of which holds values smaller than the specified value, say pivot, based on which the partition is made and another array holds values greater than the pivot value.",
+        "how_it_works": [
+          "Pick a pivot element.",
+          "Partition the array into two sub-arrays: elements less than the pivot and elements greater than the pivot.",
+          "Recursively apply the above steps to the sub-arrays."
+        ],
+        "time_complexity": {
+          "best_case": "O(n log n)",
+          "average_case": "O(n log n)",
+          "worst_case": "O(n^2)"
+        }
+      },
+      {
+        "name": "Heap Sort",
+        "description": "Heap Sort is a comparison-based sorting technique based on a binary heap data structure. It is similar to selection sort where we first find the maximum element and place the maximum element at the end. We repeat the same process for the remaining elements.",
+        "how_it_works": [
+          "Build a max heap from the input data.",
+          "At this point, the largest item is stored at the root of the heap. Replace it with the last item of the heap followed by reducing the size of the heap by 1. Finally, heapify the root of the tree.",
+          "Repeat step 2 while the size of the heap is greater than 1."
+        ],
+        "time_complexity": {
+          "best_case": "O(n log n)",
+          "average_case": "O(n log n)",
+          "worst_case": "O(n log n)"
+        }
+      },
+      {
+        "name": "Counting Sort",
+        "description": "Counting Sort is an integer sorting algorithm that operates by counting the number of objects that have distinct key values (kind of hashing). It is not a comparison-based sorting algorithm and its running time complexity is O(n) with space proportional to the range of the data.",
+        "how_it_works": [
+          "Find the range of the input data.",
+          "Create a count array to store the count of each unique object.",
+          "Modify the count array such that each element at each index stores the sum of previous counts.",
+          "Output each object from the input sequence followed by decreasing its count by 1."
+        ],
+        "time_complexity": {
+          "best_case": "O(n + k)",
+          "average_case": "O(n + k)",
+          "worst_case": "O(n + k)"
+        }
+      },
+      {
+        "name": "Radix Sort",
+        "description": "Radix Sort is a non-comparative sorting algorithm. It avoids comparison by creating and distributing elements into buckets according to their radix. For elements with more than one significant digit, this bucketing process is repeated for each digit, while preserving the ordering of the prior step, until all digits have been considered.",
+        "how_it_works": [
+          "Sort the elements based on the least significant digit.",
+          "Repeat the process for each digit, moving towards the most significant digit."
+        ],
+        "time_complexity": {
+          "best_case": "O(nk)",
+          "average_case": "O(nk)",
+          "worst_case": "O(nk)"
+        }
+      }
+    ]
+  }

@@ -3,6 +3,9 @@ let arraySize = 50;
 let speed = 500; 
 let isSorting = false;
 
+
+
+
 document.addEventListener('DOMContentLoaded', (event) => {
     document.getElementById('speedValue').textContent = speed;
     document.getElementById('speedSlider').value = speed;
@@ -45,31 +48,33 @@ async function sleep() {
 }
 
 async function startSorting() {
+
+
     isSorting = true;
     const algorithm = document.getElementById('algorithm').value;
     switch (algorithm) {
-        case 'bubbleSort':
+        case 'Bubble Sort':
             await bubbleSort();
             break;
-        case 'selectionSort':
+        case 'Selection Sort':
             await selectionSort();
             break;
-        case 'insertionSort':
+        case 'Insertion Sort':
             await insertionSort();
             break;
-        case 'mergeSort':
+        case 'Merge Sort':
             await mergeSort(0, array.length - 1);
             break;
-        case 'quickSort':
+        case 'Quick Sort':
             await quickSort(0, array.length - 1);
             break;
-        case 'heapSort':
+        case 'Heap Sort':
             await heapSort();
             break;
-        case 'countingSort':
+        case 'Counting Sort':
             await countingSort();
             break;
-        case 'radixSort':
+        case 'Radix Sort':
             await radixSort();
             break;
         default:
@@ -82,5 +87,24 @@ function generateArray(length) {
     drawArray();
 }
 
+
+function logSelectedAlgorithm() {
+    const algorithmSelect = document.getElementById('algorithm');
+    const selectedAlgorithm = algorithmSelect.value;
+    console.log('Selected Algorithm:', selectedAlgorithm);
+
+    const AlgoHeading = document.getElementById('SortingAlgo');
+    const AlgoDescription = document.getElementById('AlgoDescription');
+    const AlgoComplexity = document.getElementById('AlgoComplexity');
+
+    AlgoHeading.innerHTML = `${selectedAlgorithm}`;
+    //TODO: get the data from algo.json
+}
+
+
+document.getElementById('algorithm').addEventListener('change', logSelectedAlgorithm);
+
+
+document.addEventListener('DOMContentLoaded', logSelectedAlgorithm);
 
 generateArray(arraySize);
