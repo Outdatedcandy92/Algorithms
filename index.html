@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorting Algorithm Visualization</title>
+    <link rel="stylesheet" type="text/css" href="src/style.css" />
+</head>
+<body>
+    <div class="controls">
+        <select id="algorithm">
+            <option value="bubbleSort">Bubble Sort</option>
+            <option value="selectionSort">Selection Sort</option>
+            <option value="insertionSort">Insertion Sort</option>
+            <option value="mergeSort">Merge Sort</option>
+            <option value="quickSort">Quick Sort</option>
+            <option value="heapSort">Heap Sort</option>
+            <option value="countingSort">Counting Sort</option>
+            <option value="radixSort">Radix Sort</option>
+        </select>
+        <button onclick="startSorting()">Start Sorting</button>
+        <button onclick="resetArray()">Reset Array</button>
+    </div>
+    <div id="array-container"></div>
+
+    <script src="src/script.js"></script>
+</body>
+</html>

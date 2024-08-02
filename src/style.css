@@ -1,0 +1,26 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #0d1117;
+}
+
+.controls {
+    margin-bottom: 20px;
+}
+
+#array-container {
+    display: flex;
+    align-items: flex-end;
+    height: 400px;
+    width: 800px;
+}
+
+.bar {
+    margin: 0 1px;
+
+}
