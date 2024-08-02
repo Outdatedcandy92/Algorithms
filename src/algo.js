@@ -5,7 +5,7 @@ async function bubbleSort() {
             await sleep();
             if (array[j] > array[j + 1]) {
                 [array[j], array[j + 1]] = [array[j + 1], array[j]];
-                drawArray([j, j + 1]); 
+                drawArray([j, j + 1]);
                 await sleep();
             }
         }
@@ -24,7 +24,7 @@ async function selectionSort() {
         }
         if (minIndex !== i) {
             [array[i], array[minIndex]] = [array[minIndex], array[i]];
-            drawArray([i, minIndex]); 
+            drawArray([i, minIndex]);
             await sleep();
         }
     }
@@ -41,7 +41,7 @@ async function insertionSort() {
             j = j - 1;
         }
         array[j + 1] = key;
-        drawArray([j + 1]); 
+        drawArray([j + 1]);
         await sleep();
     }
 }
@@ -61,7 +61,7 @@ async function countingSortForRadix(exp) {
     for (let i = 0; i < array.length; i++) {
         const index = Math.floor(array[i] / exp) % 10;
         count[index]++;
-        drawArray([i]); 
+        drawArray([i]);
         await sleep();
     }
 
@@ -79,7 +79,7 @@ async function countingSortForRadix(exp) {
 
     for (let i = 0; i < array.length; i++) {
         array[i] = output[i];
-        drawArray([i]); 
+        drawArray([i]);
         await sleep();
     }
 }
@@ -92,7 +92,7 @@ async function countingSort() {
 
     for (let i = 0; i < array.length; i++) {
         count[array[i]]++;
-        drawArray([i]); 
+        drawArray([i]);
         await sleep();
     }
 
@@ -109,7 +109,7 @@ async function countingSort() {
 
     for (let i = 0; i < array.length; i++) {
         array[i] = output[i];
-        drawArray([i]); 
+        drawArray([i]);
         await sleep();
     }
 }
@@ -122,7 +122,7 @@ async function heapSort() {
     }
     for (let i = n - 1; i > 0; i--) {
         [array[0], array[i]] = [array[i], array[0]];
-        drawArray([0, i]); 
+        drawArray([0, i]);
         await sleep();
         await heapify(i, 0);
     }
@@ -140,7 +140,7 @@ async function heapify(n, i) {
     }
     if (largest !== i) {
         [array[i], array[largest]] = [array[largest], array[i]];
-        drawArray([i, largest]); 
+        drawArray([i, largest]);
         await sleep();
         await heapify(n, largest);
     }
@@ -158,17 +158,17 @@ async function partition(left, right) {
     const pivot = array[right];
     let i = left - 1;
     for (let j = left; j < right; j++) {
-        drawArray([j, right]); 
+        drawArray([j, right]);
         await sleep();
         if (array[j] <= pivot) {
             i++;
             [array[i], array[j]] = [array[j], array[i]];
-            drawArray([i, j]); 
+            drawArray([i, j]);
             await sleep();
         }
     }
     [array[i + 1], array[right]] = [array[right], array[i + 1]];
-    drawArray([i + 1, right]); 
+    drawArray([i + 1, right]);
     await sleep();
     return i + 1;
 }
@@ -186,7 +186,7 @@ async function merge(left, mid, right) {
     const rightArray = array.slice(mid + 1, right + 1);
     let i = 0, j = 0, k = left;
     while (i < leftArray.length && j < rightArray.length) {
-        drawArray([k]); 
+        drawArray([k]);
         await sleep();
         if (leftArray[i] <= rightArray[j]) {
             array[k++] = leftArray[i++];
@@ -195,12 +195,12 @@ async function merge(left, mid, right) {
         }
     }
     while (i < leftArray.length) {
-        drawArray([k]); 
+        drawArray([k]);
         await sleep();
         array[k++] = leftArray[i++];
     }
     while (j < rightArray.length) {
-        drawArray([k]); 
+        drawArray([k]);
         await sleep();
         array[k++] = rightArray[j++];
     }
@@ -583,6 +583,7 @@ async function treeSort() {
         if (!root) return new TreeNode(value);
         if (value < root.value) root.left = insert(root.left, value);
         else root.right = insert(root.right, value);
+        drawArray(array);
         return root;
     }
 
@@ -591,6 +592,7 @@ async function treeSort() {
             inOrderTraversal(root.left, result);
             result.push(root.value);
             inOrderTraversal(root.right, result);
+            drawArray(array);
         }
     }
 

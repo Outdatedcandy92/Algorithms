@@ -3,6 +3,8 @@
 <head>
     <title>Sorting Algorithm Visualization</title>
     <link rel="stylesheet" type="text/css" href="src/style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/chartist/dist/chartist.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chartist/dist/chartist.min.js"></script>
 </head>
 
 <body>
@@ -25,7 +27,7 @@
                 <option value="Cycle Sort">Cycle Sort</option>
                 <option value="Cocktail Sort">Cocktail Sort</option>
                 <option value="Strand Sort">Strand Sort</option>
-                <option value="Bitonic Sort">Bitonic Sort</option>
+                <!-- <option value="Bitonic Sort">Bitonic Sort</option> -->
                 <option value="Pancake Sort">Pancake Sort</option>
                 <option value="BogoSort">BogoSort</option>
                 <option value="Gnome Sort">Gnome Sort</option>
@@ -67,8 +69,9 @@
                     ullamco laboris nisi ut aliquip ex ea.</p>
             </div>
             <div class="description-right">
-                <p>Example here</p>
-                <div id="ExampleCont"></div>
+                <div class="desc-cont">
+                    <div id="ExampleCont"></div>
+                </div>
             </div>
         </div>
         <div class="info-time">
@@ -81,14 +84,43 @@
                 </div>
             </div>
             <div class="time-right">
-                <p>Graph here</p>
-
+                <p>graph</p>
+                <div id="complexityChart" class="ct-chart ct-perfect-fourth"></div>
             </div>
         </div>
     </section>
 
     <script src="src/algo.js"></script>
     <script src="src/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Generate data points for the graph
+            const labels = [];
+            const series = [];
+            for (let n = 1; n <= 1000; n++) {
+                labels.push(n);
+                series.push(n * Math.log2(n));
+            }
+
+            new Chartist.Line('#complexityChart', {
+                labels: labels,
+                series: [series]
+            }, {
+                axisX: {
+                    labelInterpolationFnc: function(value, index) {
+                        // Display label every 200 numbers
+                        return index % 200 === 0 ? value : null;
+                    },
+                    onlyInteger: true
+                },
+                axisY: {
+                    title: 'n log n'
+                },
+                showPoint: false,
+                lineSmooth: false
+            });
+        });
+    </script>
 
 </body>
 
