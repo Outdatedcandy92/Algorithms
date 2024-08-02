@@ -1,5 +1,24 @@
 let array = [];
-const arraySize = 50;
+let arraySize = 50; 
+let speed = 500; 
+let isSorting = false;
+
+document.addEventListener('DOMContentLoaded', (event) => {
+    document.getElementById('speedValue').textContent = speed;
+    document.getElementById('speedSlider').value = speed;
+    document.getElementById('arrayLength').value = arraySize;
+    generateArray(arraySize);
+});
+
+document.getElementById('speedSlider').addEventListener('input', function() {
+    speed = this.value;
+    document.getElementById('speedValue').textContent = speed;
+});
+
+document.getElementById('arrayLength').addEventListener('input', function() {
+    arraySize = this.value;
+    generateArray(arraySize); 
+});
 
 function resetArray() {
     array = Array.from({ length: arraySize }, () => Math.floor(Math.random() * 100) + 1);
@@ -13,17 +32,20 @@ function drawArray(highlightedIndices = []) {
         const bar = document.createElement('div');
         bar.classList.add('bar');
         bar.style.height = `${value * 4}px`;
-        bar.style.width = `${800 / arraySize - 2}px`;
         if (highlightedIndices.includes(index)) {
-            bar.style.backgroundColor = '#006d32'; // darker green highlight col
-        } else {
-            bar.style.backgroundColor = '#39d353'; //green deafult col
+            bar.style.backgroundColor = 'red'; //TODO: pick a better color or a variable
         }
         container.appendChild(bar);
     });
 }
 
+async function sleep() {
+    const wait = speed;
+    return new Promise(resolve => setTimeout(resolve, wait));
+}
+
 async function startSorting() {
+    isSorting = true;
     const algorithm = document.getElementById('algorithm').value;
     switch (algorithm) {
         case 'bubbleSort':
@@ -35,63 +57,30 @@ async function startSorting() {
         case 'insertionSort':
             await insertionSort();
             break;
+        case 'mergeSort':
+            await mergeSort(0, array.length - 1);
+            break;
+        case 'quickSort':
+            await quickSort(0, array.length - 1);
+            break;
+        case 'heapSort':
+            await heapSort();
+            break;
+        case 'countingSort':
+            await countingSort();
+            break;
+        case 'radixSort':
+            await radixSort();
+            break;
+        default:
+            console.error('Unknown sorting algorithm:', algorithm);
     }
+}
+
+function generateArray(length) {
+    array = Array.from({ length }, () => Math.floor(Math.random() * 100) + 1);
     drawArray();
 }
 
-async function bubbleSort() {
-    for (let i = 0; i < array.length; i++) {
-        for (let j = 0; j < array.length - i - 1; j++) {
-            drawArray([j, j + 1]);
-            await sleep();
-            if (array[j] > array[j + 1]) {
-                [array[j], array[j + 1]] = [array[j + 1], array[j]];
-                drawArray([j, j + 1]); 
-                await sleep();
-            }
-        }
-    }
-}
 
-async function selectionSort() {
-    for (let i = 0; i < array.length; i++) {
-        let minIndex = i;
-        for (let j = i + 1; j < array.length; j++) {
-            drawArray([minIndex, j]);
-            await sleep();
-            if (array[j] < array[minIndex]) {
-                minIndex = j;
-            }
-        }
-        if (minIndex !== i) {
-            [array[i], array[minIndex]] = [array[minIndex], array[i]];
-            drawArray([i, minIndex]); 
-            await sleep();
-        }
-    }
-}
-
-async function insertionSort() {
-    for (let i = 1; i < array.length; i++) {
-        let key = array[i];
-        let j = i - 1;
-        while (j >= 0 && array[j] > key) {
-            drawArray([j, j + 1]);
-            await sleep();
-            array[j + 1] = array[j];
-            j = j - 1;
-        }
-        array[j + 1] = key;
-        drawArray([j + 1]); 
-        await sleep();
-    }
-}
-
-
-
-function sleep() {
-    const ms = 10;
-    return new Promise(resolve => setTimeout(resolve, ms));
-}
-
-resetArray();
+generateArray(arraySize);

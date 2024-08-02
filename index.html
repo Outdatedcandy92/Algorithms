@@ -1,10 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sorting Algorithm Visualization</title>
-    <link rel="stylesheet" type="text/css" href="src/style.css" />
+<title>Sorting Algorithm Visualization</title>
+<link rel="stylesheet" type="text/css" href="src/style.css" />
 </head>
 <body>
     <div class="controls">
@@ -20,9 +15,22 @@
         </select>
         <button onclick="startSorting()">Start Sorting</button>
         <button onclick="resetArray()">Reset Array</button>
+        
+        <div>
+            <label for="speedSlider">Speed (ms):</label>
+            <input type="range" id="speedSlider" min="0" max="1000" step="10" value="500">
+            <span id="speedValue">500</span> ms
+        </div>
+        
+        <div>
+            <label for="arrayLength">Array Length:</label>
+            <input type="range" id="arrayLength" min="10" max="100" step="1" value="50">
+        </div>
     </div>
     <div id="array-container"></div>
 
+
+    <script src="src/algo.js"></script>
     <script src="src/script.js"></script>
 </body>
 </html>

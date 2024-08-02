@@ -1,6 +1,6 @@
-- First work on python
-- different sorting algos
+WEBSITE
 
-- then visualize using tkinter
+- add a speed slider
+- add a array len slider
 
-- then make a website
+- add info for all the algos
