@@ -1,5 +1,5 @@
 let array = [];
-let arraySize = 50;
+let arraySize = 105;
 let speed = 500;
 let isSorting = false;
 
@@ -188,6 +188,8 @@ function logSelectedAlgorithm() {
         console.log('Average Case Time Complexity:', timeComplexity.average_case);
 
 
+        showGraph(timeComplexity.average_case);
+
         AlgoComplexity.innerHTML = `
             <p><strong>Best Case:</strong> ${algorithmData.time_complexity.best_case}</p>
             <p><strong>Average Case:</strong> ${algorithmData.time_complexity.average_case}</p>
@@ -204,27 +206,65 @@ document.getElementById('algorithm').addEventListener('change', logSelectedAlgor
 generateArray(arraySize);
 
 
-
-
-
-function test() { // fix this 
-    console.log("Example 2");
-    const container = document.getElementById('ExampleCont');
-    container.innerHTML = '';
-    const hw = 70;
-    console.log(hw);
-    for (let i = 0; i < 5; i++) {
-        const box = document.createElement('div');
-        box.style.border = '1px solid white';
-        box.style.height = `${hw}px`;
-        box.style.width = `${hw}px`;
-        box.style.backgroundColor = 'transparent';
-        box.style.display = 'inline-block';
-        box.style.boxSizing = 'border-box';
-        container.appendChild(box);
+function showGraph(timeComplexity) {
+    const GraphArea = document.getElementById('GraphArea');
+    const existingImage = GraphArea.querySelector('img');
+    if (existingImage) {
+        existingImage.remove();
     }
-    container.style.display = 'block';
+    const image = document.createElement('img');
+    switch (timeComplexity) {
+        case 'O(n^2)':
+            image.src = './img/O(n^2).png';
+            GraphArea.appendChild(image);
+            console.log('case O(n^2)');
+            break;
+        case 'O(n^2.709)':
+            image.src = './img/O(n^2.709).png';
+            GraphArea.appendChild(image);
+            console.log('case O(n^2.709)');
+            break;
+        case 'O(n^2 / 2^p)':
+            image.src = './img/O(n^2 / 2^p).png';
+            GraphArea.appendChild(image);
+            console.log('case O(n^2 / 2^p)');
+            break;
+        case 'O((n+1)!)':
+            image.src = './img/O((n+1)!).png';
+            GraphArea.appendChild(image);
+            console.log('case O((n+1)!)');
+            break;
+        case 'O(n)':
+            image.src = './img/O(n).png';
+            GraphArea.appendChild(image);
+            console.log('case O(n)');
+            break;
+        case 'O(n + k)':
+            image.src = './img/O(n + k).png';
+            GraphArea.appendChild(image);
+            console.log('case O(n + k)');
+            break;
+        case 'O(n log^2 n)':
+            image.src = './img/O(n log^2 n).png';
+            GraphArea.appendChild(image);
+            console.log('case O(n log^2 n)');
+            break;
+        case 'O(n log n)':
+            image.src = './img/O(n log n).png';
+            GraphArea.appendChild(image);
+            console.log('case O(n log n)');
+            break;
+        case 'O(nk)':
+            image.src = './img/O(nk).png';
+            GraphArea.appendChild(image);
+            console.log('case O(nk)');
+            break;
+        default:
+            console.log('Unknown case');
+    }
 }
-//test();
+
+
+
 
 
