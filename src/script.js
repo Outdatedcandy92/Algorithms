@@ -207,7 +207,7 @@ generateArray(arraySize);
 
 
 
-function test() { // fix this
+function test() { // fix this 
     console.log("Example 2");
     const container = document.getElementById('ExampleCont');
     container.innerHTML = '';

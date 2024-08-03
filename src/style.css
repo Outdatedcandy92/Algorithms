@@ -54,12 +54,14 @@ body {
     margin-top: 20px;
     width: 60vw;
     background-color: #2a2a2c;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 #info h2 {
     font-size: 24px;
     margin-bottom: 10px;
     text-align: center;
+    color: #39d353;
 }
 
 #info p {
@@ -71,19 +73,16 @@ body {
     font-size: 14px;
 }
 
-
-
 #algorithm {
     font-size: 14px;
     border-radius: 4px;
     background-color: #f9f9f9;
     margin-right: 10px;
     margin-bottom: 20px;
+    padding: 5px;
 }
 
-
 input[type="range"] {
-
     width: 90%;
     height: 8px;
     background: #ddd;
@@ -115,13 +114,11 @@ input[type="range"]::-moz-range-thumb {
     border-radius: 50%;
 }
 
-
 #speedValue,
 #arrayLengthValue {
     font-size: 16px;
     margin-left: 10px;
 }
-
 
 button {
     padding: 10px 20px;
@@ -147,6 +144,8 @@ button:hover {
 .info-heading {
     text-align: center;
     font-size: 30px;
+    color: #39d353;
+    margin-bottom: 20px;
 }
 
 .info-description,
@@ -159,6 +158,10 @@ button:hover {
 .info-description>div,
 .info-time>div {
     width: 48vw;
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .description-right {
@@ -171,7 +174,6 @@ button:hover {
     margin-top: 40px;
     height: 100%;
 }
-
 
 .ct-chart .ct-label {
     color: white;
