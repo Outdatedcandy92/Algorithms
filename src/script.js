@@ -151,7 +151,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     try {
         const response = await fetch('src/algo.json');
         algorithmsData = await response.json();
-        //logSelectedAlgorithm();
+        logSelectedAlgorithm();
     } catch (error) {
         console.error('Error fetching algorithms data:', error);
     }
@@ -165,12 +165,29 @@ function logSelectedAlgorithm() {
     const AlgoHeading = document.getElementById('HeadingInfo');
     const AlgoDescription = document.getElementById('AlgoDescription');
     const AlgoComplexity = document.getElementById('AlgoComplexity');
+    const AlgoHow = document.getElementById('AlgoHow');
 
     const algorithmData = algorithmsData.algorithms.find(algo => algo.name === selectedAlgorithm);
 
     if (algorithmData) {
         AlgoHeading.innerHTML = `${selectedAlgorithm}`;
         AlgoDescription.innerHTML = algorithmData.description;
+
+        const howItWorksList = document.createElement('ul');
+        algorithmData.how_it_works.forEach(step => {
+            const listItem = document.createElement('li');
+            listItem.textContent = step;
+            howItWorksList.appendChild(listItem);
+        });
+        AlgoHow.innerHTML = '';
+        AlgoHow.appendChild(howItWorksList);
+
+
+
+        const timeComplexity = algorithmData.time_complexity;
+        console.log('Average Case Time Complexity:', timeComplexity.average_case);
+
+
         AlgoComplexity.innerHTML = `
             <p><strong>Best Case:</strong> ${algorithmData.time_complexity.best_case}</p>
             <p><strong>Average Case:</strong> ${algorithmData.time_complexity.average_case}</p>
@@ -179,16 +196,18 @@ function logSelectedAlgorithm() {
     } else {
         AlgoDescription.innerHTML = 'Description not available.';
         AlgoComplexity.innerHTML = 'Complexity not available.';
+        AlgoHow.innerHTML = 'How it works not available.';
     }
 }
-
-//document.getElementById('algorithm').addEventListener('change', logSelectedAlgorithm);
+document.getElementById('algorithm').addEventListener('change', logSelectedAlgorithm);
 
 generateArray(arraySize);
 
 
 
-function test() {
+
+
+function test() { // fix this
     console.log("Example 2");
     const container = document.getElementById('ExampleCont');
     container.innerHTML = '';
@@ -206,4 +225,6 @@ function test() {
     }
     container.style.display = 'block';
 }
-test();
+//test();
+
+

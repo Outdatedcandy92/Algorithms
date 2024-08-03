@@ -116,206 +116,222 @@
     },
     {
       "name": "Bingo Sort Algorithm",
+      "description": "Bingo Sort Algorithm is a simple sorting algorithm that repeatedly finds the largest element and moves it to the end of the list. It is a variation of the selection sort algorithm.",
       "how_it_works": [
-        "Find the largest element and move it to the end.",
-        "Repeat the process for the remaining elements."
+      "Find the largest element and move it to the end.",
+      "Repeat the process for the remaining elements."
       ],
       "time_complexity": {
-        "best_case": "O(n)",
-        "average_case": "O(n^2)",
-        "worst_case": "O(n^2)"
+      "best_case": "O(n)",
+      "average_case": "O(n^2)",
+      "worst_case": "O(n^2)"
       }
     },
     {
       "name": "ShellSort",
+      "description": "ShellSort is an in-place comparison-based sorting algorithm that starts by sorting pairs of elements far apart from each other, then progressively reducing the gap between elements to be compared. It is an extension of insertion sort.",
       "how_it_works": [
-        "Divide the list into smaller sublists using a gap sequence.",
-        "Sort each sublist using insertion sort.",
-        "Reduce the gap and repeat until the gap is 1."
+      "Divide the list into smaller sublists using a gap sequence.",
+      "Sort each sublist using insertion sort.",
+      "Reduce the gap and repeat until the gap is 1."
       ],
       "time_complexity": {
-        "best_case": "O(n log n)",
-        "average_case": "O(n log^2 n)",
-        "worst_case": "O(n log^2 n)"
+      "best_case": "O(n log n)",
+      "average_case": "O(n log^2 n)",
+      "worst_case": "O(n log^2 n)"
       }
     },
     {
       "name": "TimSort",
+      "description": "TimSort is a hybrid sorting algorithm derived from merge sort and insertion sort. It is designed to perform well on many kinds of real-world data. It is the default sorting algorithm in Python's sorted() function.",
       "how_it_works": [
-        "Divide the list into small runs and sort each run using insertion sort.",
-        "Merge the runs using merge sort."
+      "Divide the list into small runs and sort each run using insertion sort.",
+      "Merge the runs using merge sort."
       ],
       "time_complexity": {
-        "best_case": "O(n)",
-        "average_case": "O(n log n)",
-        "worst_case": "O(n log n)"
+      "best_case": "O(n)",
+      "average_case": "O(n log n)",
+      "worst_case": "O(n log n)"
       }
     },
     {
       "name": "Comb Sort",
+      "description": "Comb Sort is an improvement over bubble sort that works by comparing and swapping elements that are a certain distance apart. It reduces the number of comparisons made by bubble sort and can be faster in some cases.",
       "how_it_works": [
-        "Initialize the gap to the length of the list.",
-        "Compare and swap elements that are gap distance apart.",
-        "Reduce the gap and repeat until the gap is 1."
+      "Initialize the gap to the length of the list.",
+      "Compare and swap elements that are gap distance apart.",
+      "Reduce the gap and repeat until the gap is 1."
       ],
       "time_complexity": {
-        "best_case": "O(n log n)",
-        "average_case": "O(n^2 / 2^p)",
-        "worst_case": "O(n^2)"
+      "best_case": "O(n log n)",
+      "average_case": "O(n^2 / 2^p)",
+      "worst_case": "O(n^2)"
       }
     },
     {
       "name": "Pigeonhole Sort",
+      "description": "Pigeonhole Sort is a sorting algorithm that works by distributing elements into pigeonholes based on their values. It is useful when the range of possible values is small compared to the number of elements to be sorted.",
       "how_it_works": [
-        "Find the range of the elements.",
-        "Create pigeonholes for each element in the range.",
-        "Place each element in its corresponding pigeonhole.",
-        "Collect the elements from the pigeonholes."
+      "Find the range of the elements.",
+      "Create pigeonholes for each element in the range.",
+      "Place each element in its corresponding pigeonhole.",
+      "Collect the elements from the pigeonholes."
       ],
       "time_complexity": {
-        "best_case": "O(n + k)",
-        "average_case": "O(n + k)",
-        "worst_case": "O(n + k)"
+      "best_case": "O(n + k)",
+      "average_case": "O(n + k)",
+      "worst_case": "O(n + k)"
       }
     },
     {
       "name": "Cycle Sort",
+      "description": "Cycle Sort is an in-place sorting algorithm that minimizes the number of writes to the original array. It is based on the idea of cyclically rotating elements to their correct positions.",
       "how_it_works": [
-        "For each element, find its correct position.",
-        "Swap the element with the element at its correct position.",
-        "Repeat the process for all elements."
+      "For each element, find its correct position.",
+      "Swap the element with the element at its correct position.",
+      "Repeat the process for all elements."
       ],
       "time_complexity": {
-        "best_case": "O(n^2)",
-        "average_case": "O(n^2)",
-        "worst_case": "O(n^2)"
+      "best_case": "O(n^2)",
+      "average_case": "O(n^2)",
+      "worst_case": "O(n^2)"
       }
     },
     {
       "name": "Cocktail Sort",
+      "description": "Cocktail Sort, also known as bidirectional bubble sort, is a variation of bubble sort that sorts the list in both directions. It can improve the performance of bubble sort in certain cases.",
       "how_it_works": [
-        "Perform a bubble sort in both directions.",
-        "Repeat the process until the list is sorted."
+      "Perform a bubble sort in both directions.",
+      "Repeat the process until the list is sorted."
       ],
       "time_complexity": {
-        "best_case": "O(n)",
-        "average_case": "O(n^2)",
-        "worst_case": "O(n^2)"
+      "best_case": "O(n)",
+      "average_case": "O(n^2)",
+      "worst_case": "O(n^2)"
       }
     },
     {
       "name": "Strand Sort",
+      "description": "Strand Sort is a sorting algorithm that works by repeatedly merging sorted sublists. It is similar to merge sort but uses a different approach to divide the list into sublists.",
       "how_it_works": [
-        "Create a sublist of sorted elements.",
-        "Merge the sublist with the remaining elements.",
-        "Repeat the process until all elements are sorted."
+      "Create a sublist of sorted elements.",
+      "Merge the sublist with the remaining elements.",
+      "Repeat the process until all elements are sorted."
       ],
       "time_complexity": {
-        "best_case": "O(n)",
-        "average_case": "O(n^2)",
-        "worst_case": "O(n^2)"
+      "best_case": "O(n)",
+      "average_case": "O(n^2)",
+      "worst_case": "O(n^2)"
       }
     },
     {
       "name": "Bitonic Sort",
+      "description": "Bitonic Sort is a parallel sorting algorithm that can be efficiently implemented on parallel architectures. It is based on the concept of bitonic sequences, which are sequences that are either monotonically increasing or monotonically decreasing.",
       "how_it_works": [
-        "Divide the list into bitonic sequences.",
-        "Sort each bitonic sequence.",
-        "Merge the sorted sequences."
+      "Divide the list into bitonic sequences.",
+      "Sort each bitonic sequence.",
+      "Merge the sorted sequences."
       ],
       "time_complexity": {
-        "best_case": "O(n log^2 n)",
-        "average_case": "O(n log^2 n)",
-        "worst_case": "O(n log^2 n)"
+      "best_case": "O(n log^2 n)",
+      "average_case": "O(n log^2 n)",
+      "worst_case": "O(n log^2 n)"
       }
     },
     {
       "name": "Pancake Sorting",
+      "description": "Pancake Sorting is a sorting algorithm that works by repeatedly flipping the largest element to the front and then flipping the entire list. It is named after the process of flipping pancakes with a spatula.",
       "how_it_works": [
-        "Find the largest element and flip it to the front.",
-        "Flip the largest element to its correct position.",
-        "Repeat the process for the remaining elements."
+      "Find the largest element and flip it to the front.",
+      "Flip the largest element to its correct position.",
+      "Repeat the process for the remaining elements."
       ],
       "time_complexity": {
-        "best_case": "O(n)",
-        "average_case": "O(n^2)",
-        "worst_case": "O(n^2)"
+      "best_case": "O(n)",
+      "average_case": "O(n^2)",
+      "worst_case": "O(n^2)"
       }
     },
     {
       "name": "BogoSort",
+      "description": "BogoSort is a highly inefficient sorting algorithm that works by repeatedly shuffling the list randomly and checking if it is sorted. It has a very high average and worst-case time complexity and is mainly used for educational purposes.",
       "how_it_works": [
-        "Randomly shuffle the list.",
-        "Check if the list is sorted.",
-        "Repeat the process until the list is sorted."
+      "Randomly shuffle the list.",
+      "Check if the list is sorted.",
+      "Repeat the process until the list is sorted."
       ],
       "time_complexity": {
-        "best_case": "O(n)",
-        "average_case": "O((n+1)!)",
-        "worst_case": "O(∞)"
+      "best_case": "O(n)",
+      "average_case": "O((n+1)!)",
+      "worst_case": "O(∞)"
       }
     },
     {
       "name": "Gnome Sort",
+      "description": "Gnome Sort is a simple sorting algorithm that works by repeatedly comparing adjacent elements and swapping them if they are in the wrong order. It gets its name from the way it moves elements to their correct positions, similar to how a gnome rearranges flower pots.",
       "how_it_works": [
-        "Compare the current element with the previous element.",
-        "If they are in the wrong order, swap them and move one step back.",
-        "Repeat the process until the list is sorted."
+      "Compare the current element with the previous element.",
+      "If they are in the wrong order, swap them and move one step back.",
+      "Repeat the process until the list is sorted."
       ],
       "time_complexity": {
-        "best_case": "O(n)",
-        "average_case": "O(n^2)",
-        "worst_case": "O(n^2)"
+      "best_case": "O(n)",
+      "average_case": "O(n^2)",
+      "worst_case": "O(n^2)"
       }
     },
     {
       "name": "Sleep Sort",
+      "description": "Sleep Sort is a unique sorting algorithm that works by creating a separate thread for each element and sleeping for a duration proportional to the element's value. After waking up, the elements are printed in sorted order.",
       "how_it_works": [
-        "Create a thread for each element.",
-        "Sleep for a duration proportional to the element's value.",
-        "Print the element after waking up."
+      "Create a thread for each element.",
+      "Sleep for a duration proportional to the element's value.",
+      "Print the element after waking up."
       ],
       "time_complexity": {
-        "best_case": "O(n)",
-        "average_case": "O(n)",
-        "worst_case": "O(n)"
+      "best_case": "O(n)",
+      "average_case": "O(n)",
+      "worst_case": "O(n)"
       }
     },
     {
       "name": "Stooge Sort",
+      "description": "Stooge Sort is a recursive sorting algorithm that works by dividing the list into three parts and recursively sorting the first two-thirds and the last two-thirds of the list. It is not efficient for large lists.",
       "how_it_works": [
-        "If the first element is larger than the last element, swap them.",
-        "Recursively sort the first two-thirds and the last two-thirds of the list.",
-        "Recursively sort the first two-thirds again."
+      "If the first element is larger than the last element, swap them.",
+      "Recursively sort the first two-thirds and the last two-thirds of the list.",
+      "Recursively sort the first two-thirds again."
       ],
       "time_complexity": {
-        "best_case": "O(n^2.709)",
-        "average_case": "O(n^2.709)",
-        "worst_case": "O(n^2.709)"
+      "best_case": "O(n^2.709)",
+      "average_case": "O(n^2.709)",
+      "worst_case": "O(n^2.709)"
       }
     },
     {
       "name": "Tree Sort",
+      "description": "Tree Sort is a sorting algorithm that works by inserting all elements into a binary search tree and then performing an in-order traversal to retrieve the sorted elements. It is efficient for small to moderate-sized lists.",
       "how_it_works": [
-        "Insert all elements into a binary search tree.",
-        "Perform an in-order traversal to retrieve the sorted elements."
+      "Insert all elements into a binary search tree.",
+      "Perform an in-order traversal to retrieve the sorted elements."
       ],
       "time_complexity": {
-        "best_case": "O(n log n)",
-        "average_case": "O(n log n)",
-        "worst_case": "O(n^2)"
+      "best_case": "O(n log n)",
+      "average_case": "O(n log n)",
+      "worst_case": "O(n^2)"
       }
     },
     {
-      "name": "Odd-Even Sort / Brick Sort",
+      "name": "Odd-Even Sort",
+      "description": "Odd-Even Sort, also known as Brick Sort, is a variation of bubble sort that compares and swaps adjacent elements in odd and even indexed pairs. It can be parallelized and is commonly used in parallel computing.",
       "how_it_works": [
-        "Compare and swap adjacent elements in odd and even indexed pairs.",
-        "Repeat the process until the list is sorted."
+      "Compare and swap adjacent elements in odd and even indexed pairs.",
+      "Repeat the process until the list is sorted."
       ],
       "time_complexity": {
-        "best_case": "O(n)",
-        "average_case": "O(n^2)",
-        "worst_case": "O(n^2)"
+      "best_case": "O(n)",
+      "average_case": "O(n^2)",
+      "worst_case": "O(n^2)"
       }
     }
   ]

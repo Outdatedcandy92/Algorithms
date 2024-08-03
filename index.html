@@ -63,10 +63,10 @@
         </div>
         <div class="info-description">
             <div class="description-left">
+                <h1>Description</h1>
+                <p id="AlgoDescription"></p>
                 <h1>How It Works</h1>
-                <p id="AlgoDescription">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi ut aliquip ex ea.</p>
+                <div id="AlgoHow"></div>
             </div>
             <div class="description-right">
                 <div class="desc-cont">
@@ -77,10 +77,7 @@
         <div class="info-time">
             <div class="time-left">
                 <h1>Time Complexity</h1>
-                <div class="AlgoComplexity">
-                    <p><b>Best Case:</b> O(n log n)</p>
-                    <p><b>Average Case:</b> O(n log n)</p>
-                    <p><b>Worst Case:</b> O(n log n)</p>
+                <div id="AlgoComplexity">
                 </div>
             </div>
             <div class="time-right">
@@ -92,35 +89,6 @@
 
     <script src="src/algo.js"></script>
     <script src="src/script.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            // Generate data points for the graph
-            const labels = [];
-            const series = [];
-            for (let n = 1; n <= 1000; n++) {
-                labels.push(n);
-                series.push(n * Math.log2(n));
-            }
-
-            new Chartist.Line('#complexityChart', {
-                labels: labels,
-                series: [series]
-            }, {
-                axisX: {
-                    labelInterpolationFnc: function(value, index) {
-                        // Display label every 200 numbers
-                        return index % 200 === 0 ? value : null;
-                    },
-                    onlyInteger: true
-                },
-                axisY: {
-                    title: 'n log n'
-                },
-                showPoint: false,
-                lineSmooth: false
-            });
-        });
-    </script>
 
 </body>
 
