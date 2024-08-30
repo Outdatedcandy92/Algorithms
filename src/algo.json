@@ -115,7 +115,7 @@
       }
     },
     {
-      "name": "Bingo Sort Algorithm",
+      "name": "Bingo Sort",
       "description": "Bingo Sort Algorithm is a simple sorting algorithm that repeatedly finds the largest element and moves it to the end of the list. It is a variation of the selection sort algorithm.",
       "how_it_works": [
       "Find the largest element and move it to the end.",
@@ -128,7 +128,20 @@
       }
     },
     {
-      "name": "ShellSort",
+      "name": "Tim Sort",
+      "description": "TimSort is a hybrid sorting algorithm derived from merge sort and insertion sort. It is designed to perform well on many kinds of real-world data. It is the default sorting algorithm in Python's sorted() function.",
+      "how_it_works": [
+        "Divide the list into small runs and sort each run using insertion sort.",
+        "Merge the runs using merge sort."
+      ],
+      "time_complexity": {
+        "best_case": "O(n)",
+        "average_case": "O(n log n)",
+        "worst_case": "O(n log n)"
+      }
+    },
+    {
+      "name": "Shell Sort",
       "description": "ShellSort is an in-place comparison-based sorting algorithm that starts by sorting pairs of elements far apart from each other, then progressively reducing the gap between elements to be compared. It is an extension of insertion sort.",
       "how_it_works": [
       "Divide the list into smaller sublists using a gap sequence.",
